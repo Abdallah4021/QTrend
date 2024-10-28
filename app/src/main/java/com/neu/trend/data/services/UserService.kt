@@ -13,9 +13,7 @@ interface UserService {
         @Query("q") query: String,
         @Query("page") page: Int = 1,
         @Query("sort") sort: String = "stars",
-        @Query("order") order: String = "desc",
-        // TODO : Remove this token from here and add it to the interceptor
-        @Header("Authorization") token: String = "token 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",
+        @Query("order") order: String = "desc"
     ): ApiResponse<GitHubResponse>
 
 }
