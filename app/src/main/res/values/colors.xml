@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#38B6FF</color>
+    <color name="trout">#4F5660</color>
+    <color name="alabaster">#F9F9F9</color>
+    <color name="seashell">#F1F1F1</color>
+    <color name="main">#7A2AC46C</color>
+    <color name="main2">#3E2AC46C</color>
+    <color name="primaryTextColor">#333333</color>
+    <color name="secondaryTextColor">#777777</color>
+    <color name="div">#59777777</color>
+    <!-- Change to your preferred link color -->
+
+</resources>

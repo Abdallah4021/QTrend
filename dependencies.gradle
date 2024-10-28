@@ -1,0 +1,216 @@
+/*
+
+    * This file will handle all application Dependencies
+
+    * At first :-
+        - define all dependencies version
+        - sort dependencies in groups
+
+    * Ways to add dependencies to gradle file in project :-
+        - Add this file as plugin via  <B> apply from: '../dependencies.gradle' </B>
+        - implementation imageLoadingDependencies.values() <B> using values will add all dependencies in the group </B>
+        - implementation imageLoadingDependencies.glide <B> only add glide </B>
+
+    * appDependencies is like Arrays for modules, to use it : implementation appDependencies.values()
+
+*/
+ext {
+    def kotlin_version = '1.4.30'
+    def appcompat_version = '1.3.0-beta01'
+    def core_version = '1.5.0-beta03'
+    def constraint_layout_version = '2.1.0-beta01'
+    def google_material_version = '1.4.0-alpha01'
+    def androidx_junit_version = '1.1.2'
+    def espresso_version = '3.3.0'
+    def junit_version = '4.13'
+    def timber_version = '4.7.1'
+    def glide_version = '4.12.0'
+    def coroutines_version = '1.4.0-M1'
+    def coroutines_play_version = '1.4.3'
+    def lifecycle_version = "2.2.0"
+    def annotation_processor_glide = '4.12.0'
+    def kotpref_version = '2.12.0'
+    def hdodenhof_version = '3.1.0'
+    def firebase_crashlytics_ktx_version = '17.4.3'
+    def fragment_ktx_version = '1.3.1'
+    def activity_ktx_version = '1.3.0-alpha04'
+    def exifinterface_version = '1.3.2'
+    def recycleview_version = '1.2.0-beta02'
+    def swipe_layout_version = '1.2.0-alpha01'
+    def retrofit_version = '2.9.0'
+    def interceptor_version = '4.9.0'
+    def moshi_version = '1.11.0'
+    def moshi_converter_version = '2.9.0'
+    def okhttp_version = '4.0.1'
+    def dexter_version = '6.2.1'
+    def hilt_android_version = '2.29.1-alpha'
+    def dagger_hilt_version = '1.0.0-alpha02'
+    def sandwich_version = '1.0.5'
+    def what_if_version = '1.0.9'
+    def image_slider_version = '1.4.0'
+    def firebase_analytics_version = '17.4.4'
+    def firebase_messaging_version = '21.0.0'
+    def simple_barcode_scanner_version = '1.0.23'
+    def flex_box_flow_layout_version = '2.0.1'
+    def aws_version = '2.6.30'
+    def aws_mobile_client_version = '2.6.+@aar'
+    def exo_player_version = '2.13.2'
+    def image_viewer_version = '1.0.1'
+    def fragment_view_binding_delegate = '1.0.0'
+    def data_store_version = '1.0.0-alpha08'
+    def location_version = '18.0.0'
+    def mapVersion = '17.0.0'
+
+    kotlinDependencies = [
+            kotlin : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    ]
+
+    coroutinesDependencies = [
+            coroutines      : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+    ]
+
+    coroutinesGooglePlayDependencies = [
+            coroutines_play : "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutines_play_version"
+    ]
+
+    androidxDependencies = [
+            core             : "androidx.core:core-ktx:$core_version",
+            appcompat        : "androidx.appcompat:appcompat:$appcompat_version",
+            activity         : "androidx.activity:activity-ktx:$activity_ktx_version",
+            fragment         : "androidx.fragment:fragment-ktx:$fragment_ktx_version",
+            constraintlayout : "androidx.constraintlayout:constraintlayout:$constraint_layout_version",
+            swipe_layout     : "androidx.swiperefreshlayout:swiperefreshlayout:$swipe_layout_version",
+            exifinterface    : "androidx.exifinterface:exifinterface:$exifinterface_version",
+            recyclerview     : "androidx.recyclerview:recyclerview:$recycleview_version"
+    ]
+
+    lifeCycleDependencies = [
+            viewModel  : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+            LiveData   : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",
+            LifeCycles : "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
+            extensions : "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+            //implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
+    ]
+
+    googleDependencies = [
+            matelrial : "com.google.android.material:material:$google_material_version"
+    ]
+
+    androidTestDependencies = [
+            androidx_junit : "androidx.test.ext:junit:$androidx_junit_version",
+            espresso       : "androidx.test.espresso:espresso-core:$espresso_version"
+    ]
+
+    javaTestDependencies = [
+            junit : "junit:junit:$junit_version"
+    ]
+
+    preferenceKotlinDependencies = [
+            preferencies : "com.chibatching.kotpref:kotpref:$kotpref_version"
+    ]
+
+    logDependencies = [
+            timber : "com.jakewharton.timber:timber:$timber_version"
+    ]
+
+    imageLoadingDependencies = [
+            glide   : "com.github.bumptech.glide:glide:$glide_version",
+    ]
+
+    annotationProcessor = [
+            glide : "com.github.bumptech.glide:compiler:$annotation_processor_glide"
+    ]
+
+    circleImageDependencies = [
+            circle_image_view : "de.hdodenhof:circleimageview:$hdodenhof_version"
+    ]
+
+//    crashlyticsDependencies = [
+//            crashlytics_ktx : "com.google.firebase:firebase-analytics-ktx:$firebase_crashlytics_ktx_version",
+//            crashlytics     : "com.google.firebase:firebase-crashlytics:$firebase_crashlytics_version"
+//    ]
+
+    flowLayoutDependencies = [
+            flexbox : "com.google.android:flexbox:$flex_box_flow_layout_version"
+    ]
+
+    retrofitDependencies = [
+            interceptor : "com.squareup.okhttp3:logging-interceptor:$interceptor_version",
+            retrofit    : "com.squareup.retrofit2:retrofit:$retrofit_version",
+            converter   : "com.squareup.retrofit2:converter-scalars:$retrofit_version",
+            sandwich    : "com.github.skydoves:sandwich:$sandwich_version"
+            //okhttp      : "com.squareup.okhttp3:okhttp:$okhttp_version"// remove when use Moshi
+    ]
+
+    moshiDependencies = [
+            moshi          : "com.squareup.moshi:moshi-kotlin:$moshi_version",
+            moshi_retrofit : "com.squareup.retrofit2:converter-moshi:$moshi_converter_version",
+            kapt           : "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+    ]
+
+    dexterPermissionDependencies = [
+            dexter : "com.karumi:dexter:$dexter_version"
+    ]
+
+    hiltDependency = [
+            hilt           : "com.google.dagger:hilt-android:$hilt_android_version",
+            hilt_viewmodel : "androidx.hilt:hilt-lifecycle-viewmodel:$dagger_hilt_version",
+            hilt_common    : "androidx.hilt:hilt-common:$dagger_hilt_version",
+            kapt           : "androidx.hilt:hilt-compiler:$dagger_hilt_version",
+            kapt_android   : "com.google.dagger:hilt-android-compiler:$hilt_android_version"
+    ]
+
+    whatIfDependency = [
+            whatif : "com.github.skydoves:whatif:$what_if_version"
+    ]
+
+    onBoardingSliderDependency = [
+            autoimageslider : "com.github.smarteist:autoimageslider:$image_slider_version"
+    ]
+
+    PushNotificationDependency = [
+            analytics : "com.google.firebase:firebase-analytics:$firebase_analytics_version",
+            messaging : "com.google.firebase:firebase-messaging:$firebase_messaging_version"
+    ]
+
+    appDependencies = [
+            timber              : logDependencies.timber,
+            glide               : imageLoadingDependencies.glide,
+            picasso             : imageLoadingDependencies.picasso
+    ]
+
+    qrCodScannerDependency = [
+            qr_scanner : "com.github.bobekos:SimpleBarcodeScanner:$simple_barcode_scanner_version"
+    ]
+
+    AWSDependency = [
+            aws_sdk               : "com.amazonaws:aws-android-sdk-s3:$aws_version",
+            aws_sdk_cognito       : "com.amazonaws:aws-android-sdk-cognito:$aws_version",
+            aws_sdk_mobile_client : "com.amazonaws:aws-android-sdk-mobile-client:$aws_mobile_client_version"
+    ]
+
+    exoplayerDependency = [
+            exoplayer    : "com.google.android.exoplayer:exoplayer-core:$exo_player_version",
+            exoplayer_ui : "com.google.android.exoplayer:exoplayer-ui:$exo_player_version"
+    ]
+
+    frescoImageViewerDependency = [
+            imageviewer : "com.github.stfalcon:stfalcon-imageviewer:$image_viewer_version"
+    ]
+
+    bindingDependency = [
+            viewbindingdelegate : "com.github.Zhuinden:fragmentviewbindingdelegate-kt:$fragment_view_binding_delegate"
+    ]
+
+    dataStoreDependency = [
+            dataStore : "androidx.datastore:datastore-preferences:$data_store_version"
+    ]
+
+    locationDependency = [
+            location : "com.google.android.gms:play-services-location:$location_version"
+    ]
+
+    mapDependency = [
+            map : "com.google.android.gms:play-services-maps:$mapVersion"
+    ]
+}

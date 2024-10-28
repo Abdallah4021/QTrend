@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_trending"
+        android:icon="@drawable/ic_trend"
+        android:orderInCategory="1"
+        android:title="Trending" />
+    <item
+        android:id="@+id/nav_favorite"
+        android:icon="@drawable/ic_favourite1"
+        android:orderInCategory="2"
+        android:title="Favorite" />
+</menu>

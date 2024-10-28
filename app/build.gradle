@@ -1,0 +1,114 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+}
+
+// Dependency File
+apply from: '../dependencies.gradle'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.neu.trend"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "String", "SERVER_URL", '"https://api.github.com/"'
+        }
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    sourceSets {
+        main {
+            assets {
+                srcDirs 'src/main/assets'
+            }
+        }
+    }
+}
+
+
+dependencies {
+    // test
+    implementation androidTestDependencies.values()
+    implementation javaTestDependencies.values()
+
+    // kotlin
+    implementation kotlinDependencies.values()
+
+    // location
+    implementation locationDependency.values()
+
+    // map
+    implementation mapDependency.values()
+
+    // android x
+    implementation androidxDependencies.values()
+    implementation lifeCycleDependencies.values()
+
+    // kotlin
+    implementation kotlinDependencies.values()
+    implementation coroutinesDependencies.values()
+
+    // ui
+    implementation googleDependencies.values()
+    implementation imageLoadingDependencies.glide
+
+    annotationProcessor annotationProcessor.values()
+    implementation circleImageDependencies.values()
+
+    // di
+    implementation hiltDependency.hilt
+    implementation hiltDependency.hilt_viewmodel
+    implementation hiltDependency.hilt_common
+    kapt hiltDependency.kapt
+    kapt hiltDependency.kapt_android
+
+    // retrofit
+    implementation retrofitDependencies.values()
+
+    // serializer
+    implementation moshiDependencies.moshi
+    implementation moshiDependencies.moshi_retrofit
+    kapt moshiDependencies.kapt
+
+    // log
+    implementation logDependencies.values()
+
+    // whatIf
+    implementation whatIfDependency.values()
+
+    // shared preference
+    implementation preferenceKotlinDependencies.values()
+
+    // permissions
+    implementation dexterPermissionDependencies.values()
+
+    // view binding
+    implementation bindingDependency.values()
+    // lottie
+    implementation 'com.airbnb.android:lottie:5.0.3'
+    // event bus
+    implementation 'org.greenrobot:eventbus:3.2.0'
+}
